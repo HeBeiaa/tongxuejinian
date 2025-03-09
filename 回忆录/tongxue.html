@@ -1,0 +1,209 @@
+<!-- a2.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>2019级5班同学录</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #1a1a1a, #2c3e50);
+            font-family: 'ZCOOL KuaiLe', cursive;
+            color: white;
+        }
+
+        .parallax-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23ffffff10"/></svg>');
+            z-index: -1;
+        }
+
+        .header {
+            text-align: center;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            text-shadow: 0 0 20px var(--accent);
+            animation: textGlow 2s infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px var(--accent); }
+            to { text-shadow: 0 0 30px var(--accent); }
+        }
+
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .student-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .student-card:hover {
+            transform: perspective(1000px) rotateX(10deg) rotateY(10deg) translateZ(20px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 30px var(--secondary);
+        }
+
+        .student-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg,
+            transparent,
+            rgba(255,255,255,0.2),
+            transparent);
+            transform: rotate(45deg);
+            animation: lightFlow 3s infinite;
+        }
+
+        @keyframes lightFlow {
+            0% { transform: rotate(45deg) translateX(-100%); }
+            100% { transform: rotate(45deg) translateX(100%); }
+        }
+
+        .wave {
+            height: 150px;
+            overflow: hidden;
+            margin: -5px 0;
+        }
+
+        .wave svg {
+            height: 100%;
+            width: 100%;
+        }
+
+        .wave path {
+            fill: rgba(255,255,255,0.1);
+            animation: wave 10s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body>
+<div class="parallax-bg"></div>
+
+<div class="wave">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+        <path d="M0,70 C150,180 350,0 500,70 L500,150 L0,150 Z"></path>
+    </svg>
+</div>
+
+<div class="header">
+    <h1>2019级5班同学录</h1>
+    <p>班主任：张静老师</p>
+    <p>任课教师：李春容、徐灵、蒋硕、霍运红等(名字录入不齐全 原谅我)</p>
+    <p>同学名字可能打错字awa(也原谅我)</p>
+</div>
+
+<div class="student-grid">
+    <div class="student-card">1. 金刘俊城</div>
+    <div class="student-card">2. 刘明涛</div>
+    <div class="student-card">3. 杨祖欢</div>
+    <div class="student-card">4. 张景巽</div>
+    <div class="student-card">5. 张听语</div>
+    <div class="student-card">6. 向彦樾</div>
+    <div class="student-card">7. 杨雅雯</div>
+    <div class="student-card">8. 涂进月</div>
+    <div class="student-card">9. 鞠文铮(转学)</div>
+    <div class="student-card">10. 刘文轩</div>
+    <div class="student-card">11. 张家瑞</div>
+    <div class="student-card">12. 杨云皓</div>
+    <div class="student-card">13. 杨焱竹</div>
+    <div class="student-card">14. 任珂昕</div>
+    <div class="student-card">15. 王鑫玉</div>
+    <div class="student-card">16. 吴近熙</div>
+    <div class="student-card">17. 卢婳萱</div>
+    <div class="student-card">18. 䆠舜闵</div>
+    <div class="student-card">19. 许可</div>
+    <div class="student-card">20. 罗崎闻</div>
+    <div class="student-card">21. 赵奕航</div>
+    <div class="student-card">22. 曾语圭</div>
+    <div class="student-card">23. 魏宇涵</div>
+    <div class="student-card">24. 赵梓琪</div>
+    <div class="student-card">25. 郑博文</div>
+    <div class="student-card">26. 李纹卓</div>
+    <div class="student-card">27. 杨辰昊</div>
+    <div class="student-card">28. 闫思成</div>
+    <div class="student-card">29. 张恩铭</div>
+    <div class="student-card">30. 雷济铭</div>
+    <div class="student-card">31. 陈思妍</div>
+    <div class="student-card">32. 冯诗涵</div>
+    <div class="student-card">33. 周思宇</div>
+    <div class="student-card">34. 张正奇</div>
+    <div class="student-card">35. 张建王</div>
+    <div class="student-card">36. 钟诗涵</div>
+    <div class="student-card">37. 肖童恩</div>
+    <div class="student-card">38. 於俊宇</div>
+    <div class="student-card">39. 张福笛</div>
+    <div class="student-card">40. 张天翔</div>
+    <div class="student-card">41. 张派铭</div>
+    <div class="student-card">42. 何明轩</div>
+    <div class="student-card">43. 苏予晨</div>
+    <div class="student-card">44. 陈骏豪</div>
+    <div class="student-card">45. 胡云清</div>
+    <div class="student-card">46. 郑童予</div>
+    <div class="student-card">47. 刘宜芯</div>
+    <div class="student-card">48. 岳芮铜</div>
+    <div class="student-card">49. 喻言晨</div>
+    <div class="student-card">50. 游婉彤</div>
+    <div class="student-card">51. 方柱勋</div>
+    <div class="student-card">52. 刘旭阳</div>
+    <div class="student-card">53. 李致贤</div>
+    <div class="student-card">54. 龙颜文</div>
+    <div class="student-card">55. 谭懿菡</div>
+</div>
+
+<script>
+    // 视差效果
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        document.querySelector('.parallax-bg').style.transform =
+            `translateY(${scrolled * 0.5}px)`;
+    });
+
+    // 动态卡片效果
+    document.querySelectorAll('.student-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--x', `${x}px`);
+            card.style.setProperty('--y', `${y}px`);
+        });
+    });
+</script>
+</body>
+</html>
