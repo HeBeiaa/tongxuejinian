@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>2019级5班毕业纪念册</title>
+    <style>
+        :root {
+            --summer-blue: #58C9E6;
+            --sun-yellow: #FFD700;
+            --leaf-green: #7FC242;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(160deg, var(--summer-blue) 30%, var(--leaf-green));
+            font-family: 'Microsoft YaHei', sans-serif;
+            overflow-x: hidden;
+        }
+
+        #input-section {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            background: rgba(255,255,255,0.9);
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+        }
+
+        #main-content {
+            display: none;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sun-btn {
+            background: var(--sun-yellow);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+        }
+
+        .sun-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .student-card {
+            background: rgba(255,255,255,0.9);
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .student-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .blessing {
+            background: rgba(255,255,255,0.9);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #2c3e50;
+            animation: fadeInUp 1s ease;
+        }
+
+        .sun {
+            position: fixed;
+            top: -50px;
+            right: -50px;
+            width: 120px;
+            height: 120px;
+            background: var(--sun-yellow);
+            border-radius: 50%;
+            box-shadow: 0 0 80px rgba(255,215,0,0.4);
+        }
+
+        .wave {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 150' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z' fill='%23ffffff' opacity='0.2'/%3E%3C/svg%3E");
+            animation: wave 12s infinite linear;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="sun"></div>
+    <div class="wave"></div>
+
+    <div id="input-section">
+        <h2 style="color:#2c3e50; margin-bottom:1.5rem;">🎓 2019级5班毕业纪念</h2>
+        <input type="text" id="nameInput" placeholder="输入你的名字" 
+               style="padding:12px; width:250px; border:2px solid var(--summer-blue); border-radius:8px; margin-right:10px;">
+        <button class="sun-btn" onclick="showBlessing()">生成纪念册</button>
+    </div>
+
+    <div id="main-content">
+        <div class="blessing" id="blessingContent">
+            <h2 style="text-align:center; margin-bottom:1.5rem;">致2019级5班全体同学</h2>
+            <p>在这个栀子花开的六月，我们即将告别熟悉的校园，踏上人生新的征程。回首六年时光，教室里回荡着我们的朗朗书声，操场上留下了我们的矫健身姿，实验室见证着我们的探索精神。这段青春岁月，因为有你们的陪伴而格外璀璨。</p>
+
+            <p>记得刚入学时的青涩模样，我们在张静老师的带领下逐渐融入这个温暖的大家庭。李春容老师的数学课总是充满逻辑的美感，徐灵老师的英语课带我们领略异国文化，蒋硕老师的物理课充满奇思妙想，霍运红老师的化学实验让我们惊叹科学的神奇。每一位老师的谆谆教诲，都如同明灯般照亮我们前行的道路。</p>
+
+            <p>在这片见证我们成长的校园里，55位同学共同谱写了无数难忘的篇章：运动会上齐心协力的接力赛，元旦晚会上精彩纷呈的才艺展示，月考前的挑灯夜读，课间操时整齐划一的动作......这些点点滴滴都将成为记忆中最珍贵的琥珀。</p>
+
+            <p>如今站在毕业的门槛前，既有对过往的不舍，更有对未来的期待。愿金刘俊城保持你的领导风范，在大学生活中继续发光发热；愿刘明涛永远保持对知识的渴求，在学术道路上勇攀高峰；愿杨雅雯的文艺天赋能在更广阔的舞台绽放；愿张家瑞的体育特长助你赢得更多荣耀......</p>
+
+            <p>未来的日子里，或许我们会散作满天星辰，但2019级5班永远是我们共同的家。当你们在实验室攻克难题时，在图书馆查阅资料时，在异国他乡仰望星空时，请记住这个充满回忆的教室，记住我们共同度过的1460个日夜。</p>
+
+            <p>最后，送上最诚挚的祝福：愿你们在各自的领域成为擎天白玉柱、架海紫金梁；愿你们永远保持赤子之心，不被世俗磨去棱角；愿你们既有前程可奔赴，亦有岁月可回首。当凤凰花再次盛开时，期待我们的重逢！</p>
+        </div>
+
+        <div class="header">
+            <h1>2019级5班同学录</h1>
+            <p>班主任：张静老师</p>
+            <p>任课教师：李春容、徐灵、蒋硕、霍运红</p>
+        </div>
+
+        <div class="student-grid">
+    <div class="student-card">1. 金刘俊城</div>
+        <div class="student-card">2. 刘明涛</div>
+        <div class="student-card">3. 杨祖欢</div>
+        <div class="student-card">4. 张景梁</div>
+        <div class="student-card">5. 张昕语</div>
+        <div class="student-card">6. 向彦樾</div>
+        <div class="student-card">7. 杨雅雯</div>
+        <div class="student-card">8. 涂进月</div>
+        <div class="student-card">9. 鞠文铮</div>
+        <div class="student-card">10. 刘文轩</div>
+        <div class="student-card">11. 张家瑞</div>
+        <div class="student-card">12. 杨云皓</div>
+        <div class="student-card">13. 杨焱竹</div>
+        <div class="student-card">14. 任珂昕</div>
+        <div class="student-card">15. 王鑫玉</div>
+        <div class="student-card">16. 吴近熙</div>
+        <div class="student-card">17. 卢婧萱</div>
+        <div class="student-card">18. 唐沛霖</div>
+        <div class="student-card">19. 许可</div>
+        <div class="student-card">20. 罗崎闻</div>
+        <div class="student-card">21. 赵奕航</div>
+        <div class="student-card">22. 曾语圭</div>
+        <div class="student-card">23. 魏宇涵</div>
+        <div class="student-card">24. 赵梓琪</div>
+        <div class="student-card">25. 郑博文</div>
+        <div class="student-card">26. 李文卓</div>
+        <div class="student-card">27. 杨辰昊</div>
+        <div class="student-card">28. 闫思成</div>
+        <div class="student-card">29. 张恩铭</div>
+        <div class="student-card">30. 雷济铭</div>
+        <div class="student-card">31. 陈思妍</div>
+        <div class="student-card">32. 冯诗涵</div>
+        <div class="student-card">33. 周思宇</div>
+        <div class="student-card">34. 张正奇</div>
+        <div class="student-card">35. 张建王</div>
+        <div class="student-card">36. 钟诗涵</div>
+        <div class="student-card">37. 肖童恩</div>
+        <div class="student-card">38. 於俊宇</div>
+        <div class="student-card">39. 张福笛</div>
+        <div class="student-card">40. 张天翔</div>
+        <div class="student-card">41. 张派铭</div>
+        <div class="student-card">42. 何明轩</div>
+        <div class="student-card">43. 苏予晨</div>
+        <div class="student-card">44. 陈骏豪</div>
+        <div class="student-card">45. 胡云清</div>
+        <div class="student-card">46. 郑童予</div>
+        <div class="student-card">47. 刘宜芯</div>
+        <div class="student-card">48. 岳芮铜</div>
+        <div class="student-card">49. 喻言晨</div>
+        <div class="student-card">50. 游婉彤</div>
+        <div class="student-card">51. 方柱勋</div>
+        <div class="student-card">52. 刘旭阳</div>
+        <div class="student-card">53. 李致贤</div>
+        <div class="student-card">54. 龙颜文</div>
+        <div class="student-card">55. 谭懿菌</div>
+
+        </div>
+    </div>
+
+<script>
+function showBlessing() {
+    const name = document.getElementById('nameInput').value.trim();
+    if (!name) return;
+
+    
+    const blessingHeader = document.querySelector('#blessingContent h2');
+    blessingHeader.innerHTML = `${name}同学，欢迎回到2019级5班`;
+    
+    document.getElementById('input-section').style.opacity = '0';
+    document.getElementById('input-section').style.pointerEvents = 'none';
+    document.getElementById('main-content').style.display = 'block';
+
+    
+    createFallingLeaves();
+}
+
+function createFallingLeaves() {
+    const colors = ['#FFD700', '#7FC242', '#E67E22'];
+    for(let i=0; i<20; i++) {
+        const leaf = document.createElement('div');
+        leaf.style.cssText = `
+            position: fixed;
+            top: -30px;
+            left: ${Math.random()*100}%;
+            width: 15px;
+            height: 15px;
+            clip-path: polygon(50% 0%, 80% 50%, 50% 100%, 20% 50%);
+            background: ${colors[i%3]};
+            animation: fall ${8+Math.random()*4}s linear infinite;
+            opacity: 0.7;
+            z-index: 50;
+        `;
+        document.body.appendChild(leaf);
+    }
+}
+
+const style = document.createElement('style');
+style.textContent = `
+@keyframes fall {
+    to { 
+        transform: translateY(100vh) rotate(360deg); 
+        opacity: 0;
+    }
+}`;
+document.head.appendChild(style);
+</script>
+</body>
+</html>
