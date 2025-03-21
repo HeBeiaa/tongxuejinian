@@ -17,6 +17,49 @@
             font-family: 'Microsoft YaHei', sans-serif;
             overflow-x: hidden;
         }
+        <script type="text/javascript">  
+ (function($){  
+    $.fn.snow = function(options){  
+     var $flake = $('<div id="snowbox" />').css({'position': 'absolute','z-index':'9999', 'top': '-50px', 'cursor': 'pointer'}).html('❄'),  
+     documentHeight  = $(document).height(),  
+     documentWidth   = $(document).width(),  
+     defaults = {  
+         minSize     : 10,  
+         maxSize     : 20,  
+         newOn       : 1000,  
+         flakeColor  : "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */  
+     },  
+     options = $.extend({}, defaults, options);  
+     var interval= setInterval( function(){  
+     var startPositionLeft = Math.random() * documentWidth - 100,  
+     startOpacity = 0.5 + Math.random(),  
+     sizeFlake = options.minSize + Math.random() * options.maxSize,  
+     endPositionTop = documentHeight - 200,  
+     endPositionLeft = startPositionLeft - 500 + Math.random() * 500,  
+     durationFall = documentHeight * 10 + Math.random() * 5000;  
+     $flake.clone().appendTo('body').css({  
+         left: startPositionLeft,  
+         opacity: startOpacity,  
+         'font-size': sizeFlake,  
+         color: options.flakeColor  
+     }).animate({  
+         top: endPositionTop,  
+        left: endPositionLeft,  
+         opacity: 0.2  
+     },durationFall,'linear',function(){  
+        $(this).remove()  
+     });  
+     }, options.newOn);  
+     };  
+ })(jQuery);  
+ $(function(){  
+     $.fn.snow({   
+         minSize: 5, /* 定义雪花最小尺寸 */  
+       maxSize: 50,/* 定义雪花最大尺寸 */  
+         newOn: 300  /* 定义密集程度，数字越小越密集 */  
+    });  
+ });  
+</script> 
 
         #input-section {
             position: fixed;
@@ -134,7 +177,7 @@
             <h2 style="text-align:center; margin-bottom:1.5rem;">致2019级5班全体同学</h2>
             <p>在这个栀子花开的六月，我们即将告别熟悉的校园，踏上人生新的征程。回首六年时光，教室里回荡着我们的朗朗书声，操场上留下了我们的矫健身姿，实验室见证着我们的探索精神。这段青春岁月，因为有你们的陪伴而格外璀璨。</p>
 
-            <p>记得刚入学时的青涩模样，我们在张静老师的带领下逐渐融入这个温暖的大家庭。李春容老师的数学课总是充满逻辑的美感，徐灵老师的英语课带我们领略异国文化，蒋硕老师的物理课充满奇思妙想，霍运红老师的化学实验让我们惊叹科学的神奇。每一位老师的谆谆教诲，都如同明灯般照亮我们前行的道路。</p>
+         
 
             <p>在这片见证我们成长的校园里，55位同学共同谱写了无数难忘的篇章：运动会上齐心协力的接力赛，元旦晚会上精彩纷呈的才艺展示，月考前的挑灯夜读，课间操时整齐划一的动作......这些点点滴滴都将成为记忆中最珍贵的琥珀。</p>
 
